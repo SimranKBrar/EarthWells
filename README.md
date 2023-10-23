@@ -1,6 +1,6 @@
 # EarthWells
 ENE 405 Project
-https://youtu.be/b9MD6Q6DeXw 
+
 
 # UN SDG(s) #
 Clean Water and Salination - 
@@ -19,3 +19,6 @@ Clean water is an issue that continues to persist across the world there are sti
 
 Earth wells will impower the user to take clean water back into their own hands, it will provide a community forum for natural water filters. The forum will provide not only knowledge on a plethora of natural water filters but the forum format will support any questions users may have. These questions could range from part modification and adaption to scalability limitations.
 
+# Project Video Uploads #
+
+[Project Initailization Video](https://youtu.be/b9MD6Q6DeXw)
