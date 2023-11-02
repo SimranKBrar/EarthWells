@@ -7,6 +7,8 @@ import {
 } from "react-router-dom";
 import './index.css'
 import Post from './Post.tsx';
+import RegistrationForm from './SignUp.tsx'
+import LoginForm from './Login.tsx';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +18,14 @@ const router = createBrowserRouter([
   {
     path: "/posts/:postId",
     element: <Post />,
+  },
+  {
+    path: "/signup",
+    element: <RegistrationForm/>,
+  },
+  {
+    path: "/login",
+    element: <LoginForm/>,
   },
 ]);
 
