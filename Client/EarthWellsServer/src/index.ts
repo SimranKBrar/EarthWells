@@ -31,6 +31,12 @@ console.log(posts);
 res.json(posts);
     });
 
+app.delete('/posts/:postId', async (req: Request, res: Response) => {
+  const postId = req.params.deckId;
+  await Posts.findByIdAndDelete(postId);
+res.json(Posts);
+
+});
 mongoose.connect('mongodb+srv://wellsearth:J3peaSVz52XRAqmv@clusterearthwells.y5bzjst.mongodb.net/?retryWrites=true&w=majority'
   ).then(() => {
     console.log('listening on port 5000');
