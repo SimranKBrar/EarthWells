@@ -1,0 +1,107 @@
+.Container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+.postContainer{
+    margin-top: 20px;
+    background-color: bisque;
+    width: 820px;
+    
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.256);
+    border-radius: 20px;
+    font-family: 'Roboto', sans-serif; 
+}
+.posttwoContainer{
+    padding: 20px;
+}
+  
+  .materialList {
+    display: flex;
+    flex-wrap: wrap; /* Allow materials to wrap to the next line if there's not enough space */
+  }
+  
+  .materialItem {
+    background-color: #1cbccd; /* Blue background color */
+    color: #fff; /* White text color */
+    padding: 8px 16px; /* Adjust padding as needed */
+    margin: 8px 8px 0 8px; /* Adjust margin between material items */
+    text-decoration: none !important; /* Remove underline */
+    border: none; /* Remove border */
+    border-radius: 15px; /* Add rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Add smooth transition for background color */
+  
+    /* Optional: Hover styles */
+    &:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+    }
+  }
+  .materialItem:hover {
+    text-decoration: none; /* Remove underline on hover */
+  }
+
+  .postreplies{
+    border: 1px solid #bcb9b9af;
+    padding: 10px;
+    border-radius: 15px;
+    margin-top: 20px;
+  }
+
+  .replylist {
+    display: flex;
+    flex-direction: column; /* Stack replies vertically */
+  }
+  
+  .replyitem {
+    background-color: #f2f2f2;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+  }
+  
+  .reply-content {
+    /* Add styles for the reply content as needed */
+  }
+  
+  .reply-user {
+    margin-top: 10px;
+  }
+  
+  .user-label {
+    font-weight: bold;
+    font-size: small;
+    color: #7da1c8;
+  }
+  
+  .user-name {
+    margin-left: 5px;
+    font-size: small;
+    color: #7da1c8; /* Blue color for the user's name */
+  }
+
+
+  .taglist {
+    display: flex;
+    flex-wrap: wrap; /* Allow tags to wrap to the next line if there's not enough space */
+  }
+  
+  .tagItem {
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    padding: 8px 16px; /* Adjust padding as needed */
+    margin: 8px; /* Adjust margin between tag items */
+    text-decoration: none; /* Remove default underline for links */
+    border: none; /* Remove border */
+    border-radius: 15px; /* Add rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Add smooth transition for background color */
+  }
+  
+  .tagItem:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }

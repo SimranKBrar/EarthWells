@@ -5,28 +5,38 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import './index.css'
-import Post from './Post.tsx';
-import RegistrationForm from './SignUp.tsx'
 import LoginForm from './Login.tsx';
+import PostDetails from './PostDetails.tsx';
+import RegistrationForm from './SignUp.tsx';
+import Materials from './materialList.tsx';
+import MaterialDetail from './materialDetail.tsx';
+import Header from './Header.tsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <LoginForm />,
+  },
+  {
+    path: "/app",
+    element: <App/>,
   },
   {
     path: "/posts/:postId",
-    element: <Post />,
+    element: <PostDetails/>,
   },
   {
     path: "/signup",
     element: <RegistrationForm/>,
   },
   {
-    path: "/login",
-    element: <LoginForm/>,
-  },
+  path: "/mat",
+  element: <Materials/>,
+},
+{
+  path: "/materials/:materialId",
+  element: <MaterialDetail/>,
+},
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

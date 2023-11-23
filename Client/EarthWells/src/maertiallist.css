@@ -1,0 +1,16 @@
+.material-item {
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.058);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer; /* Add cursor pointer for better UX */
+  }
+  
+  .material-item a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit the color from the parent element */
+    display: block; /* Make the link a block-level element */
+    width: 100%; /* Make the link take up the entire width of the card */
+    height: 100%; /* Make the link take up the entire height of the card */
+  }

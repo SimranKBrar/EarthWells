@@ -1,53 +1,75 @@
-import { useEffect, useState } from "react";
-
+// App.tsx
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Link } from "react-router-dom";
-import { TPost, getPosts } from "./api/getPosts";
-import { createPosts } from "./api/createPosts";
-
+import { TPost } from "./api/getPosts";
+import PostForm from "./postForm";
+import Materials from "./materialList";
+import Header from "./Header";
 
 function App() {
   const [posts, setPosts] = useState<TPost[]>([]);
-  const [title, setTitle] = useState("");
+  const [isPopUpOpen, setPopUpOpen] = useState(false);
 
-  async function handleCreatePost(e: React.FormEvent) {
-    e.preventDefault();
-
-    const post = await createPosts(title);
-    setPosts([...posts, post]);
-
-    setTitle("");
-  }
+  const handleCreatePost = (title: string, body: string, username: string, materials: string[], tags: string[]) => {
+    // Make a POST request to create a new post
+    fetch("http://localhost:5000/posts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ title, body, username, materials, tags }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setPosts([...posts, data]);
+        setPopUpOpen(false); // Close the pop-up after creating a post
+      })
+      .catch((error) => console.error("Error creating a new post:", error));
+  };
 
   useEffect(() => {
-    async function fetchPosts() {
-      const newPosts = await getPosts();
-      setPosts(newPosts);
-    }
-    fetchPosts();
+    // Fetch the list of posts from your Express API
+    fetch("http://localhost:5000/posts")
+      .then((response) => response.json())
+      .then((data) => setPosts(data))
+      .catch((error) => console.error("Error fetching posts:", error));
   }, []);
 
   return (
-    <>
-      <div className="posts">
-        {posts.map((post) => (
-          <li key={post._id}>
-            <Link to={"posts/${post._id}"}>{post.title}</Link>
-          </li>
-        ))}
-      </div>
-      <form onSubmit={handleCreatePost}>
-        <label htmlFor="post-title">Post title</label>
-        <input
-          id="post-title"
-          value={title}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            setTitle(e.target.value);
-          }}
-        />
-        <button>Create Post</button>
-      </form>
-    </>
+    <div className="App">
+      <Header />
+      <main className="main-container">
+        <section className="post-form">
+          <button onClick={() => setPopUpOpen(true)}>Create a New Post</button>
+          {isPopUpOpen && (
+            <div className="pop-up">
+              <h2>Create a New Post</h2>
+              <PostForm onSubmit={handleCreatePost} />
+              <button onClick={() => setPopUpOpen(false)}>Cancel</button>
+            </div>
+          )}
+        </section>
+        <section className="side-by-side-container">
+        <section className="post-list">
+          <h2>Recent Posts</h2>
+          <div className="post-grid">
+            {posts.map((post) => (
+              <div key={post._id} className="post-item">
+                <h3>
+                  <Link to={`/posts/${post._id}`}>{post.title}</Link>
+                </h3>
+                <p>{post.body}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+        <section className="materials-list">
+          <Materials />
+        </section>
+        </section>
+      </main>
+    </div>
   );
 }
 
