@@ -5,7 +5,7 @@ ENE 405 Project
 # UN SDG(s) #
 Clean Water and Salination - 
 
-Ensure availability and sustainable management of water and sanitation for all
+Ensure availability and sustainable management of water and sanitation for all. Specifically aiming to help Target. 6.1 described as "By 2030, achieve universal and equitable access to safe and affordable drinking water for all". 
 
 # Project idea #
 
