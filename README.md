@@ -44,19 +44,22 @@ Before you begin, ensure you have the following installed:
    cd [backend-folder]
    
 2. **Install Dependencies**:
+      ```bash
     npm install
    
-3. **Set Up Mongo DB Atlas Url**
-  
-4. **Start the Backend Server:**
-   Navigate to
-   Run
-   npm run dev
+4. **Set Up Mongo DB Atlas Url**
   
 5. **Start the Backend Server:**
+   Navigate to
+   Run
+   ```bash
+   npm run dev
+  
+7. **Start the Backend Server:**
  Navigate to
    Run
+   ```bash
    npm run dev
-6. **Open Up a browser and app will be running on **
+9. **Open Up a browser and app will be running on **
 
 
