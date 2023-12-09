@@ -36,39 +36,43 @@ Before you begin, ensure you have the following installed:
 - React Native CLI
 - MongoDB Atlas account
 
-# SetUp
 
-1. **Clone the Repository with your method of choosing in a code editor**
-   
-2. **Install Dependencies**:
-      ```bash
-    npm install
-   
-3. **Set Up Mongo DB Atlas Url**
-<br>
-Set up an account with Mongo DB Atlas and replace the space between ' ' in the code below with your code at the bottom of the index.js file in the EarthWellsServer Folder
- ```bash
-mongoose.connect(''
-  ).then(() => {
-    console.log('listening on port 5000');
-    app.listen(5000); 
-  
+### SetUp
+
+1. **Clone the Repository:**
+   - Use your preferred method to clone the repository in a code editor.
+
+2. **Install Dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Set Up MongoDB Atlas URL:**
+   - Create an account with MongoDB Atlas.
+   - Replace the space between the single quotes in the code below with your MongoDB Atlas URL. You can find this code at the bottom of the `index.js` file in the `EarthWellsServer` folder:
+   ```javascript
+   mongoose.connect('<Your MongoDB Atlas URL>').then(() => {
+     console.log('listening on port 5000');
+     app.listen(5000);
+   ```
+
 4. **Start the Backend Server:**
-<br>
-   Navigate to \Client\EarthWellsServer
-<br>
-   Run
-   ```bash
-   npm run dev
-  
-5. **Start the FrontEnd Server:**
-<br>
- Navigate to \Client\EarthWells
-<br>
-   Run
-   ```bash
-   npm run dev
+   - Navigate to `\Client\EarthWellsServer`.
+   - Run:
+     ```bash
+     npm run dev
+     ```
 
-6. **Open Up a browser and app will be running on http://127.0.0.1:5173/ **
+5. **Start the Frontend Server:**
+   - Navigate to `\Client\EarthWells`.
+   - Run:
+     ```bash
+     npm run dev
+     ```
+
+6. **Open Up a Browser:**
+   - The app will be running at [http://127.0.0.1:5173/](http://127.0.0.1:5173/).
+
+Make sure to replace `<Your MongoDB Atlas URL>` with the actual URL you obtained from MongoDB Atlas. Additionally, ensure that the specified ports (5000 for the backend and 5173 for the frontend) are available and not in use by other processes on your machine.
 
 
