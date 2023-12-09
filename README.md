@@ -61,14 +61,14 @@ Before you begin, ensure you have the following installed:
    ```
 
 4. **Start the Backend Server:**
-   - Navigate to `\Client\EarthWellsServer`.
+   - Open a Terminal and Navigate to `\Client\EarthWellsServer`.
    - Run:
      ```bash
      npm run dev
      ```
 
 5. **Start the Frontend Server:**
-   - Navigate to `\Client\EarthWells`.
+   - Open a Terminal and Navigate to `\Client\EarthWells`.
    - Run:
      ```bash
      npm run dev
