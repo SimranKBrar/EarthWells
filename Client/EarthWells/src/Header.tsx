@@ -22,9 +22,12 @@ const Header = () => {
         <h1 className="site-logo">Earth Wells</h1>
       </div>
       <div className="topBar">
-        <button onClick={() => handleButtonClick('/app')}>Home</button>
-        <button onClick={() => handleButtonClick('/posts')}>Posts</button>
-        <button onClick={() => handleButtonClick('/mat')}>Materials</button>
+        <button onClick={() => handleButtonClick('/home')}>Home</button>
+        <button onClick={() => handleButtonClick('/materialsList')}>Materials</button>
+        <button onClick={() => handleButtonClick('/AddTag')}>Add a Tag</button>
+        <button onClick={() => handleButtonClick('/Addmateril')}>Add a Material</button>
+        <button onClick={() => handleButtonClick('/sort')}>Sort</button>
+        <button onClick={() => handleButtonClick('/profile')}>Profile</button>
         <button onClick={handleLogout}>Logout</button>
       </div>
     </nav>

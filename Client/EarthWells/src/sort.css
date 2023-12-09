@@ -1,0 +1,106 @@
+.filter-posts-container {
+    display: flex;
+
+    justify-content: space-around;
+    padding: 10px;;
+  }
+  
+  .filter-posts-content {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    text-align: center;
+    flex: .25;
+  }
+  
+  .filter-posts-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .filter-posts-select {
+    margin-bottom: 15px;
+  }
+  
+  .filter-posts-label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .filter-posts-dropdown {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    width: 90%;
+  }
+  
+  .filter-posts-button {
+    background-color: #0f7bd3;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 0;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    width: 48%; /* Adjust the width as needed */
+    transition: background-color 0.3s;
+  }
+  
+  .filter-posts-button:hover {
+    background-color: #095c9a;
+  }
+  
+  .filter-posts-results {
+    margin-top: 20px;
+  }
+  
+  .filter-posts-subtitle {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .filter-posts-list li {
+    font-size: 16px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd; /* Very light border */
+    /* Remove default link styles */
+    margin-right: 20px;
+    border-radius: 15px; 
+    list-style-type: none;
+  }
+  
+  .filter-posts-list li:hover {
+    background-color: #f5f5f5; /* Grey hover effect */
+    border: 1px solid #ddd; /* Very light border */
+    border-radius: 15px; /* Rounded corners */
+    cursor: pointer;
+  }
+  
+  .filter-posts-list li {
+    list-style-type: none;
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+   
+  }
+  .filter-posts-list li a {
+    text-decoration: none; /* Remove underline */
+    color: black; /* Set text color to black */
+  }
+  
+  .filter-posts-list li a:hover {
+    /* Add hover styles if needed */
+    color: #333; /* Change color on hover if desired */
+  }
+  /* Add any additional styles as needed */
+  

@@ -2,7 +2,8 @@
 
 .formReply {
     background-color: #badfec; /* Dark gray background color */
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
     display: flex;

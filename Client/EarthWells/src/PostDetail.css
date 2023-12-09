@@ -1,10 +1,39 @@
-.Container{
+.Containerpost{
     display: flex;
     justify-content: center;
     width: 100%;
     
 }
+.Container{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  
+}
+.like-dislike-container {
+  display: flex;
+}
 
+.like,
+.dislike {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px; /* Adjust the border-radius for rounder buttons */
+  padding: 5px 10px;
+  margin-right: 10px; /* Add some spacing between buttons */
+}
+
+.like svg,
+.dislike svg {
+  margin-right: 5px; /* Add some spacing between icon and number */
+}
+
+/* Add hover styles if desired */
+.like:hover,
+.dislike:hover {
+  background-color: #f5f5f5; /* Grey hover effect */
+}
 .postContainer{
     margin-top: 20px;
     background-color: bisque;

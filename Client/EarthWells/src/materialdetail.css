@@ -1,28 +1,97 @@
+.Container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #30a2f423;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.256);
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+  text-align: left;
+}
+
 .material-info {
-    display: flex;
-    background-color: rgb(255, 255, 255);
-    flex-direction: column;
-    align-items: center;
-   
-    min-width: 50vh;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
-    
-    height: 80vh; /* Set a height if you want it to take up the full viewport height */
-  }
-  
-  .material-name {
-    /* Add styles for the material name heading */
-  }
-  
-  .material-description {
-    /* Add styles for the material description paragraph */
-  }
-  
-  .location-list {
-    list-style: none; /* Remove default list styles */
-    padding: 0;
-  }
-  
-  .location-item {
-    /* Add styles for each location item in the list */
-  }
+  margin-top: 20px;
+  width: 100%; /* Set width to 100% to stretch the length */
+}
+
+.material-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f81d3;
+  margin-bottom: 10px;
+}
+
+.material-description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.green-text,
+.red-text {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  margin: 5px 0;
+  cursor: pointer;
+  display: inline-block; /* Ensures the button doesn't take the full width */
+}
+
+.green-text {
+  color: #fff;
+  background-color: #4caf50;
+}
+
+.red-text {
+  color: #fff;
+  background-color: #f44336;
+}
+
+.location-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.location-item {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.alternatives {
+  margin-top: 20px;
+}
+
+.alternatives h3 {
+  font-size: 20px;
+  color: #0f81d3;
+  margin-bottom: 10px;
+}
+
+.alternatives ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.alternatives li {
+  margin-bottom: 10px;
+}
+
+.alternatives a {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #0f7bd3;
+  color: #fff;
+  border: 1px solid #0f7bd3;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.alternatives a:hover {
+  background-color: #09528e;
+  color: #fff;
+}

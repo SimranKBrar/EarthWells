@@ -106,3 +106,62 @@ const PostSubmissionForm: React.FC<PostSubmissionFormProps> = ({ onSubmit }) => 
 };
 
 export default PostSubmissionForm;
+
+
+
+interface Material {
+  _id: string;
+  name: string;
+  locations: string[];
+  description: string;
+}
+
+interface TokenType {
+  id: string;
+  username: string;
+  firstName: string;
+  lastName: string;
+  userLocation: string;
+  // Add other properties if needed
+}
+
+
+
+
+
+
+
+        <form onSubmit={handleSubmit}>
+            <label htmlFor="post-title">Title</label>
+            <input
+                type="text"
+                id="post-title"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                required
+            />
+
+            <label htmlFor="post-body">Body</label>
+            <textarea
+                id="post-body"
+                value={body}
+                onChange={(e) => setBody(e.target.value)}
+                required
+            />
+
+            <label htmlFor="post-username">Username</label>
+            <input
+                type="text"
+                id="post-username"
+                value={username}
+                onChange={handleUsernameChange}
+                required
+            />
+
+
+
+              const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newUsername = e.target.value;
+    console.log('New Username:', newUsername);
+    setUsername(newUsername);
+  };

@@ -1,15 +1,25 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginForm.css';
+import { jwtDecode } from 'jwt-decode';
+import earthImage from '/src/drop.png'; 
 
-type SetTokenFunction = (token: string | null) => void;
+interface TokenType {
+  id: string;
+  username: string;
+  firstName: string;
+  lastName: string;
+  userLocation: string;
+  // Add other properties if needed
+}
+type SetTokenFunction = (token: TokenType | null) => void;
 
-function LoginForm({ setToken }: { setToken: SetTokenFunction }) {
+function LoginForm({ handleLogin }: { handleLogin: SetTokenFunction }) {
   const [formData, setFormData] = useState({ username: '', password: '' });
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
 
-  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     try {
@@ -24,14 +34,12 @@ function LoginForm({ setToken }: { setToken: SetTokenFunction }) {
       const data = await response.json();
       const receivedToken = data.token;
 
-      // Store the token in localStorage
-      localStorage.setItem('token', receivedToken);
-  
-      // Set the token in the state (or a global state management solution)
-      setToken(receivedToken);
-      
       if (response.ok) {
-        navigate('/app');
+        const decodedToken = jwtDecode(receivedToken) as TokenType;
+      console.log(decodedToken);
+        // Call the handleLogin function with the decoded token
+        handleLogin(decodedToken);
+        navigate('/home');
       } else {
         setError(data.message);
       }
@@ -39,6 +47,7 @@ function LoginForm({ setToken }: { setToken: SetTokenFunction }) {
       console.error('An error occurred', error);
     }
   };
+
   const handleSignupClick = () => {
     // Navigate to the signup page
     navigate('/signup');
@@ -67,6 +76,9 @@ function LoginForm({ setToken }: { setToken: SetTokenFunction }) {
         <button onClick={handleSignupClick} className="signup-button">
           Signup
         </button>
+      </div>
+      <div className="image-container">
+        <img src={earthImage} alt="Earth Image" className="earth-image" />
       </div>
     </div>
   );

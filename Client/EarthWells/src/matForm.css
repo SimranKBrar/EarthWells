@@ -1,0 +1,77 @@
+
+.matformcontiner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 50px;
+  }
+
+  form {
+    margin-left: 0;
+    width: 100%;
+}
+
+
+  
+  .matformcont {
+    max-width: 320px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.256);
+    border-radius: 20px;
+  }
+  
+  .matformname,
+  .matformcontlocations,
+  .matformcontdesc,
+  .matformcontalt {
+    margin-bottom: 15px;
+  }
+  
+  .matformname input,
+  .matformcontlocations input,
+  .matformcontdesc input,
+  .matformcont textarea,
+  .matformcont button {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    width: 90%;
+  }
+  .matformalt input{
+    width: 0%;
+  }
+  
+  .matformcont button {
+    background-color: #0f7bd3;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Additional styling for checkboxes in alternatives */
+  .matformcontalt input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  .matformspan{
+    font-family: 'Roboto', sans-serif;
+    font-size: large;
+    font-weight: 400;
+    color: #000;
+  }
+  .matformcont label {
+    font-family: 'Roboto', sans-serif;
+    font-size: large;
+    font-weight: 600;
+    color: #000;
+  }  
+  .matformname h1{
+    text-align: center;
+  }

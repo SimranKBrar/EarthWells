@@ -1,118 +1,158 @@
 import React, { useState, useEffect } from 'react';
-import { fetchMaterials, fetchTags } from './fetchOptions';
-
-interface PostSubmissionFormProps {
-    onSubmit: (title: string, body: string, username: string, materials: string[], tags: string[]) => void;
+import { fetchTags, fetchMaterials } from './fetchOptions';
+import "./postForm.css"
+interface TokenType {
+  id: string;
+  username: string;
+  firstName: string;
+  lastName: string;
+  userLocation: string;
+  // Add other properties if needed
 }
 
-const PostSubmissionForm: React.FC<PostSubmissionFormProps> = ({ onSubmit }) => {
+
+interface PostSubmissionFormProps {
+  onSubmit: (title: string, body: string, username: string, tags: string[], materials: string[]) => void;
+  token: TokenType; 
+}
+
+const PostSubmissionForm: React.FC<PostSubmissionFormProps> = ({ onSubmit , token}) => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [username, setUsername] = useState('');
-  const [materials, setMaterials] = useState<{ id: string; name: string }[]>([]); // Updated state type
-  const [tags, setTags] = useState<{ id: string; name: string }[]>([]); // Updated state type
-  const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newUsername = e.target.value;
-    console.log('New Username:', newUsername);
-    setUsername(newUsername);
-  };
-  // You might want to fetch materials and tags from the server and update the state accordingly
+  const [tags, setTags] = useState<{ _id: string; name: string }[]>([]);
+  const [materials, setMaterials] = useState<{ _id: string; name: string }[]>([]);
+  const [selectedMaterials, setSelectedMaterials] = useState<string[]>([]);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+
+ 
+
   useEffect(() => {
     // Fetch materials and tags from the server and update state
     // Example:
-    fetchMaterials().then(data => setMaterials(data));
-    fetchTags().then(data => setTags(data));
+    fetchMaterials().then((data) => setMaterials(data));
+    fetchTags().then((data) => setTags(data));
   }, []);
 
   useEffect(() => {
-    console.log('Title2:', title);
-    console.log('Body2:', body);
-    console.log('Username:2', username);
-    console.log('Materials:2', materials);
-    console.log('Tags:2', tags);
-  }, [title, body, username, materials, tags]);
+    console.log('Title:', title);
+    console.log('Body:', body);
+    console.log('Username:', username);
+    console.log('Tags:', tags);
+    console.log('Materials:', selectedMaterials);
+  }, [title, body, token.username, tags, selectedMaterials]);
+
+  const handleMaterialChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    setSelectedMaterials((prevSelected) => {
+      if (e.target.checked) {
+        return [...prevSelected, value];
+      } else {
+        return prevSelected.filter((id) => id !== value);
+      }
+    });
+  };
+
+  const handleTagChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    setSelectedTags((prevSelected) => {
+      if (e.target.checked) {
+        return [...prevSelected, value];
+      } else {
+        return prevSelected.filter((id) => id !== value);
+      }
+    });
+  };
+
+  const selectedMaterialNames = selectedMaterials.map(materialId => {
+    const selectedMaterial = materials.find(material => material._id === materialId);
+    return selectedMaterial ? selectedMaterial.name : '';
+  });
+
+  const selectedTagNames = selectedTags.map(tagId => {
+    const selectedTag = tags.find(tag => tag._id === tagId);
+    return selectedTag ? selectedTag.name : '';
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Title:', title);
     console.log('Body:', body);
     console.log('Username:', username);
-    console.log('Materials:', materials);
-    console.log('Tags:', tags);// Pass the input values to the parent component's onSubmit function
-    onSubmit(title, body, username, materials.map(mat => mat.id), tags.map(tag => tag.id));
-    console.log('Title:', title);
-    console.log('Body:', body);
-    console.log('Username:', username);
-    console.log('Materials:', materials);
     console.log('Tags:', tags);
+    console.log('MaterialsNames:', selectedMaterialNames);
+
+    // Pass the input values to the parent component's onSubmit function
+    onSubmit(title, body, token.username, selectedMaterialNames, selectedTagNames);
+
     // Optionally, you can reset the form fields after submission
     setTitle('');
     setBody('');
     setUsername('');
-    setMaterials([]);
     setTags([]);
+    setSelectedMaterials([]);
   };
-
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="post-title">Title</label>
-            <input
+      <div className='postformconatiner' >
+        <div className='postformbox'>
+        <form className='postformform' onSubmit={handleSubmit}>
+        <div className='postformtitlebox'>
+            <label className='postformtitle' htmlFor="post-title">Title</label>
+            <input className='postformtitleinput'
                 type="text"
                 id="post-title"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 required
             />
-
-            <label htmlFor="post-body">Body</label>
-            <textarea
+            </div>
+<div className='postformbodybox'>
+            <label className='postformbodytitle' htmlFor="post-body">Body</label>
+            <textarea className='postformbodyinput'
                 id="post-body"
                 value={body}
                 onChange={(e) => setBody(e.target.value)}
                 required
             />
-
-            <label htmlFor="post-username">Username</label>
-            <input
-                type="text"
-                id="post-username"
-                value={username}
-                onChange={handleUsernameChange}
-                required
-            />
-
-<label htmlFor="post-materials">Materials</label>
-      <select
-        multiple
-        id="post-materials"
-        value={materials.map(mat => mat.name)} 
-        onChange={(e) => setMaterials(Array.from(e.target.selectedOptions, (option) => ({ id: option.value, name: option.label })))}
-      >
-        {/* Map over available materials and create options */}
+            </div>
+            <div className='postformmaterialsbox'>
+<label className='postformmaterialstitle'>
+        Materials:
         {materials.map((material) => (
-          <option key={material.id} value={material.name}>
-            {material.name}
-          </option>
+          <div className='postformmaterialitem' key={material._id}>
+            <input className='postformmaterialcheck'
+              type="checkbox"
+              name="materials"
+              value={material._id}
+              checked={selectedMaterials.includes(material._id)}
+              onChange={(e) => handleMaterialChange(e)}
+            />
+            <span  className='postformmaterialname'>{material.name}</span>
+          </div>
         ))}
-      </select>
-
-      <label htmlFor="post-tags">Tags</label>
-      <select
-        multiple
-        id="post-tags"
-        value={tags.map(tag => tag.name)} 
-        onChange={(e) => setTags(Array.from(e.target.selectedOptions, (option) => ({ id: option.value, name: option.label })))}
-      >
-        {/* Map over available tags and create options */}
+      </label>
+      </div>
+<div className='postformtagbox'>
+      <label className='postformtaglabel'>
+        Tags:
         {tags.map((tag) => (
-          <option key={tag.id} value={tag.name}>
-            {tag.name}
-          </option>
+          <div className='postformtagitem' key={tag._id}>
+            <input className='postformtagcheck'
+              type="checkbox"
+              name="tags"
+              value={tag._id}
+              checked={selectedTags.includes(tag._id)}
+              onChange={(e) => handleTagChange(e)}
+            />
+            <span className='postformtagname'>{tag.name}</span>
+          </div>
         ))}
-      </select>
-
-      <button type="submit">Submit</button>
+      </label>
+      </div >
+      <button className='postformsubmitbutton' type="submit">Submit</button>
     </form>
+    </div>
+    </div>
     );
 };
 

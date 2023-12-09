@@ -83,7 +83,7 @@ app.post('/login', async (req, res) => {
     const userInfo = { id: user._id, username: user.username, firstName: user.firstName, lastName: user.lastName, userLocation: user.location };
 
     // Generate a JWT token
-    const token = jwt.sign(user, 'your_secret_key');
+    const token = jwt.sign(userInfo, 'your_secret_key');
   
     res.json({ token, success: true, message: 'Login successful' });
   } catch (error) {
@@ -176,10 +176,17 @@ console.log(req.body);
 });
 
 app.get("/posts", async (req: Request, res: Response) => {
-  const posts = await Posts.find();
-  console.log(posts);
-  res.json(posts);
-      });
+  try {
+    const posts = await Posts.find()
+      .populate('materials') // Populate the 'materials' field
+      .populate('tags'); // Populate the 'tags' field
+
+    res.json(posts);
+  } catch (error) {
+    console.error('Error fetching posts:', error);
+    res.status(500).json({ success: false, message: 'Internal Server Error' });
+  }
+});
 
 app.get('/posts/:_id', async (req: Request<PostParams>, res: Response) => {
   try {
@@ -266,19 +273,37 @@ app.post('/posts/:postId/like', async (req, res) => {
     }
 
     // Find the post by its ID
-    const post = await Posts.findById(postId);
+    const post = await Posts.findById(postId)
+    .populate({
+      path: 'replies',
+      populate: {
+        path: 'author',
+        select: 'firstName', 
+      },
+    })
+    .populate('materials') // Populate the 'replies' and 'materials' fields
+    .populate('tags'); 
 
     if (!post) {
       return res.status(404).json({ success: false, message: 'Post not found' });
     }
 
     // Check if the user has already liked the post
-    if (post.likes.includes(user._id)) {
-      return res.status  (400).json({ success: false, message: 'User has already liked the post' });
-    }
+    const likedIndex = post.likes.indexOf(user._id);
+    if (likedIndex !== -1) {
+      // If already liked, remove the like
+      post.likes.splice(likedIndex, 1);
+    } else {
+      // If not liked, add the like
+      // Check if the user has already disliked the post; if yes, remove from dislikes array
+      const dislikedIndex = post.dislikes.indexOf(user._id);
+      if (dislikedIndex !== -1) {
+        post.dislikes.splice(dislikedIndex, 1);
+      }
 
-    // Add user ObjectId to the likes array
-    post.likes.push(user._id);
+      // Add user ObjectId to the likes array
+      post.likes.push(user._id);
+    }
 
     // Save the updated post
     const updatedPost = await post.save();
@@ -290,7 +315,7 @@ app.post('/posts/:postId/like', async (req, res) => {
   }
 });
 
-// Similar route for disliking a post
+// app.post('/posts/:postId/dislike', ...
 app.post('/posts/:postId/dislike', async (req, res) => {
   const postId = req.params.postId;
   const username = req.body.username;
@@ -304,25 +329,37 @@ app.post('/posts/:postId/dislike', async (req, res) => {
     }
 
     // Find the post by its ID
-    const post = await Posts.findById(postId);
+    const post = await Posts.findById(postId)
+    .populate({
+      path: 'replies',
+      populate: {
+        path: 'author',
+        select: 'firstName', 
+      },
+    })
+    .populate('materials') // Populate the 'replies' and 'materials' fields
+    .populate('tags').populate('likes').populate('dislikes'); 
 
     if (!post) {
       return res.status(404).json({ success: false, message: 'Post not found' });
     }
 
     // Check if the user has already disliked the post
-    if (post.dislikes.includes(user._id)) {
-      return res.status(400).json({ success: false, message: 'User has already disliked the post' });
-    }
+    const dislikedIndex = post.dislikes.indexOf(user._id);
+    if (dislikedIndex !== -1) {
+      // If already disliked, remove the dislike
+      post.dislikes.splice(dislikedIndex, 1);
+    } else {
+      // If not disliked, add the dislike
+      // Check if the user has already liked the post; if yes, remove from likes array
+      const likedIndex = post.likes.indexOf(user._id);
+      if (likedIndex !== -1) {
+        post.likes.splice(likedIndex, 1);
+      }
 
-    // Check if the user has already liked the post; if yes, remove from likes array
-    const likedIndex = post.likes.indexOf(username);
-    if (likedIndex !== -1) {
-      post.likes.splice(likedIndex, 1);
+      // Add user ObjectId to the dislikes array
+      post.dislikes.push(user._id);
     }
-
-    // Add user ObjectId to the dislikes array
-    post.dislikes.push(user._id);
 
     // Save the updated post
     const updatedPost = await post.save();
@@ -333,18 +370,18 @@ app.post('/posts/:postId/dislike', async (req, res) => {
     res.status(500).json({ success: false, message: 'Failed to dislike the post' });
   }
 });
-   
 
 
 
 app.post("/materials", async (req: Request, res: Response) => {
-  const { name, locations, description } = req.body;
+  const { name, locations, description, alternatives } = req.body;
 
-  // Create a new material with name, locations, and description
+  // Create a new material with name, locations, description, and alternative
   const newMaterial = new MaterialModel({
     name,
     locations,
     description,
+    alternatives,
   });
 
   try {
@@ -359,8 +396,8 @@ app.post("/materials", async (req: Request, res: Response) => {
 
 app.get('/materials', async (req: Request, res: Response) => {
   try {
-    // Retrieve all materials from the database
-    const materials = await MaterialModel.find();
+    // Retrieve all materials from the database and populate the alternatives field
+    const materials = await MaterialModel.find().populate('alternatives');
 
     // Send the list of materials as the response
     res.json(materials);
@@ -378,7 +415,7 @@ app.get('/materials/:_id', async (req: Request<MaterialParams>, res: Response) =
     const materialId = req.params._id;
     
     // Retrieve the material by its ID
-    const material = await MaterialModel.findById(materialId);
+    const material = await MaterialModel.findById(materialId).populate('alternatives');
 
     if (!material) {
       return res.status(404).json({ success: false, message: 'Material not found' });
@@ -447,8 +484,33 @@ app.get('/tags/:tagId', async (req: Request, res: Response) => {
   }
 });
 
+app.get('/posts/by-filter', async (req: Request, res: Response) => {
+  try {
+    let filter: { [key: string]: string } = {};
 
+    if (req.query.material) {
+      filter = { materials: req.query.material as string };
+    } else if (req.query.tag) {
+      filter = { tags: req.query.tag as string };
+    }
 
+    const posts = await Posts.find(filter)
+      .populate({
+        path: 'replies',
+        populate: {
+          path: 'author',
+          select: 'firstName', 
+        },
+      })
+      .populate('materials')
+      .populate('tags');
+
+    res.json(posts);
+  } catch (error) {
+    console.error('Error fetching posts by filter:', error);
+    res.status(500).json({ success: false, message: 'Failed to fetch posts by filter' });
+  }
+});
 
 
 
@@ -469,7 +531,7 @@ app.get('/tags/:tagId', async (req: Request, res: Response) => {
 
 
 
-mongoose.connect(''
+mongoose.connect('mongodb+srv://wellsearth:tJtj4QvfZ4WwM4IU@clusterearthwells.y5bzjst.mongodb.net/?retryWrites=true&w=majority'
   ).then(() => {
     console.log('listening on port 5000');
     app.listen(5000); 

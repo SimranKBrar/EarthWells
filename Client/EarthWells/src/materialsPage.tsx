@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "./Header";
-import './maertiallist.css';
+import './materialpage.css';
+
 
 interface Material {
   _id: string;
@@ -22,7 +23,7 @@ interface MaterialsProps {
   token: TokenType;
 }
 
-const Materials: React.FC<MaterialsProps> = ({ token }) => {
+const MaterialsList: React.FC<MaterialsProps> = ({ token }) => {
   const [materials, setMaterials] = useState<Material[]>([]);
 
   useEffect(() => {
@@ -37,21 +38,24 @@ const Materials: React.FC<MaterialsProps> = ({ token }) => {
   }, [token]); // Add token to the dependency array to re-fetch data when the token changes
 
   return (
-    <div className="MaterialListconatiner">
-      <div className="MaterialListconatiner2">
-        <h2 className="MaterialListheader" >Materials</h2>
-        <div className="MaterialListconatinerinner">
+    <div>  <Header /> 
+    <div className="MaterialListconatinerpage">
+       
+      <div className="MaterialListconatiner2page">
+        <h2 className="MaterialListheaderpage" >Materials</h2>
+        <div className="MaterialListconatinerinnerpage">
           {materials.map((material) => (
-            <div  key={material._id} className="material-item">
+            <div  key={material._id} className="material-itempage">
     <Link to={`/materials/${material._id}?token=${encodeURIComponent(JSON.stringify(token))}`}>
-      <strong className="MaterialListitemname" >{material.name}</strong>
+      <strong className="MaterialListitemnamepage" >{material.name}</strong>
     </Link>
             </div>
           ))}
         </div>
       </div>
     </div>
+    </div>
   );
 };
 
-export default Materials;
+export default MaterialsList;

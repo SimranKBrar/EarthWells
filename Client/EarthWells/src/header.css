@@ -1,5 +1,5 @@
 header {
-    background-color: #0f81d3; /* Blue background color */
+    background-color:  #114fc2; /* Blue background color */
     padding: 10px 20px; /* Add padding for spacing */
     border-radius: 20px; /* Add rounded edges */
 
@@ -26,7 +26,7 @@ header {
   
   .topBar button {
     background-color: white; /* White background color for buttons */
-    color: #0f81d3; /* Blue text color for buttons */
+    color: #114fc2; /* Blue text color for buttons */
     padding: 8px 16px; /* Add padding for button size */
     margin: 10px;
     border: none;

@@ -1,0 +1,121 @@
+.postformconatiner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+  }
+
+  .postformmaetrialitem,
+  .postformtagitem{
+  
+  }
+  form.postformform {
+    margin-left: 0px;
+    width: 100%;
+}
+  .postformbox {
+    max-width: 320px;
+    width: 100%;
+    padding: 15px;
+    background-color: #fefefe;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.256);
+    border-radius: 10px;
+    text-align: center !important;
+  }
+  
+  .postformform {
+    text-align: left;
+  }
+  .postformtitlebox,
+.postformbodybox,
+.postformmaterialsbox,
+.postformtagbox {
+  margin-bottom: 15px;
+}
+
+.postformtitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.postformtitleinput,
+.postformbodyinput {
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  width: calc(100% - 16px);
+  color: black;
+}
+
+
+.postformbodytitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.postformmaterialsbox,
+.postformtagbox {
+  font-size: 14px;
+  color: black;
+}
+
+.postformmaterialitem,
+.postformtagitem {
+ padding: 5px;
+  border-radius: 10px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.postformsubmitbutton {
+  background-color: #0f7bd3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 0;
+  font-size: 14px;
+  margin-top: 10px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.postformsubmitbutton:hover {
+  background-color: #09528e;
+}
+
+label.postformmaterialstitle {
+    font-size: 16px;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 5px;
+    display: block;
+}
+label.postformtaglabel {
+    font-size: 16px;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.postformmaterialcheck,
+.postformtagcheck {
+  padding: 0px;
+}
+
+input[type="checkbox"]{
+    background:  black;
+}
+.postformmaterialname,
+.postformtagname{
+  font-weight: 400;
+}

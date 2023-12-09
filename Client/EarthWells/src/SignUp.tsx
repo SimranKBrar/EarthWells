@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 //import './RegistrationForm.css';
 import './Signup.css';
+import earthImage from '/src/drop.png'; 
 
 function RegistrationForm() {
   const [formData, setFormData] = useState({
@@ -118,6 +119,9 @@ function RegistrationForm() {
           <button onClick={handleLoginClick}>Back to Login</button>
         </div>
       )}
+      </div>
+      <div className="image-container">
+        <img src={earthImage} alt="Earth Image" className="earth-image" />
       </div>
 </div>
 
