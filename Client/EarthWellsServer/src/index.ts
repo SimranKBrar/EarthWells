@@ -531,7 +531,7 @@ app.get('/posts/by-filter', async (req: Request, res: Response) => {
 
 
 
-mongoose.connect('mongodb+srv://wellsearth:tJtj4QvfZ4WwM4IU@clusterearthwells.y5bzjst.mongodb.net/?retryWrites=true&w=majority'
+mongoose.connect(''
   ).then(() => {
     console.log('listening on port 5000');
     app.listen(5000); 
