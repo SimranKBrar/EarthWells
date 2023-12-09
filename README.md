@@ -26,11 +26,11 @@ Earth wells will impower the user to take clean water back into their own hands,
 https://github.com/SimranKBrar/EarthWells/assets/77306119/1dc0c0dc-fd2c-4e89-9e33-1272bd1250de
 
 # Project Closing Documents
-[Project Report Out and Lessons Learned](https://github.com/SimranKBrar/EarthWells/blob/939ef089461e3a5e87080e6eef82f64d9e9b37ea/Project%20Closing%20Documents/Report-Out-And-Lessons-Learned-Earth-Wells.pdf)
-[Final Project Progress Report](https://github.com/SimranKBrar/EarthWells/blob/939ef089461e3a5e87080e6eef82f64d9e9b37ea/Project%20Closing%20Documents/Earth%20Wells%20Final%20Status%20Report.pdf)
-[Addressing Ideas and Concepts Discussed in the Lectures](https://github.com/SimranKBrar/EarthWells/blob/939ef089461e3a5e87080e6eef82f64d9e9b37ea/Project%20Closing%20Documents/Concepts%20From%20Lecture%20In%20Earth%20Wells.pdf)
-[Final Presentation](https://github.com/SimranKBrar/EarthWells/blob/939ef089461e3a5e87080e6eef82f64d9e9b37ea/Project%20Closing%20Documents/Earth%20Wells%20Final%20Presentation%20Slides.pdf)
-[Commercial](https://github.com/SimranKBrar/EarthWells/blob/939ef089461e3a5e87080e6eef82f64d9e9b37ea/Project%20Closing%20Documents/Earth%20Wells%20Commercial.mp4)
+- [Project Report Out and Lessons Learned](https://github.com/SimranKBrar/EarthWells/blob/939ef089461e3a5e87080e6eef82f64d9e9b37ea/Project%20Closing%20Documents/Report-Out-And-Lessons-Learned-Earth-Wells.pdf)
+- [Final Project Progress Report](https://github.com/SimranKBrar/EarthWells/blob/939ef089461e3a5e87080e6eef82f64d9e9b37ea/Project%20Closing%20Documents/Earth%20Wells%20Final%20Status%20Report.pdf)
+- [Addressing Ideas and Concepts Discussed in the Lectures](https://github.com/SimranKBrar/EarthWells/blob/939ef089461e3a5e87080e6eef82f64d9e9b37ea/Project%20Closing%20Documents/Concepts%20From%20Lecture%20In%20Earth%20Wells.pdf)
+- [Final Presentation](https://github.com/SimranKBrar/EarthWells/blob/939ef089461e3a5e87080e6eef82f64d9e9b37ea/Project%20Closing%20Documents/Earth%20Wells%20Final%20Presentation%20Slides.pdf)
+- [Commercial](https://github.com/SimranKBrar/EarthWells/blob/939ef089461e3a5e87080e6eef82f64d9e9b37ea/Project%20Closing%20Documents/Earth%20Wells%20Commercial.mp4)
 
 # Installation
 
@@ -84,5 +84,5 @@ Make sure to replace `<Your MongoDB Atlas URL>` with the actual URL you obtained
 [Project Initailization Video](https://youtu.be/b9MD6Q6DeXw)
 
 # Other Project Documents
-[Project Initiallzation Documnets](https://github.com/SimranKBrar/EarthWells/tree/939ef089461e3a5e87080e6eef82f64d9e9b37ea/Planning%20Documents)
-[Project Status Reports](https://github.com/SimranKBrar/EarthWells/tree/939ef089461e3a5e87080e6eef82f64d9e9b37ea/Progress%20Reports)
+- [Project Initiallzation Documnets](https://github.com/SimranKBrar/EarthWells/tree/939ef089461e3a5e87080e6eef82f64d9e9b37ea/Planning%20Documents)
+- [Project Status Reports](https://github.com/SimranKBrar/EarthWells/tree/939ef089461e3a5e87080e6eef82f64d9e9b37ea/Progress%20Reports)
