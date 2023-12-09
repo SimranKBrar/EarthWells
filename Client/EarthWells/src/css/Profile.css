@@ -1,0 +1,30 @@
+.profile-container {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.user-profile {
+  font-size: 16px;
+  color: #555;
+}
+
+.profile-header {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f81d3;
+  margin-bottom: 10px;
+}
+
+.profile-info {
+  margin-bottom: 10px;
+}
+
+.profile-info span {
+  font-weight: 700;
+  color: #000000;
+}
+
+.loading-message {
+  font-size: 16px;
+  color: #555;
+}

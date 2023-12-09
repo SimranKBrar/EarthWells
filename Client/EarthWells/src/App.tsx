@@ -11,6 +11,7 @@ import PostFilterPage from './PostsByDropdowns.tsx';
 import AddMaterialForm from './materialform.tsx';
 import TagForm from './tagform.tsx';
 import MaterialsList from './materialsPage.tsx';
+import Profile from './profile.tsx';
 
 interface TokenType {
   id: string;
@@ -102,6 +103,10 @@ const App = () => {
         <Route
           path="/Sort"
           element={<PostFilterPage token={token} />}
+        />
+        <Route
+          path="/Profile"
+          element={<Profile token={token} />}
         />
       </Routes>
     </Router>

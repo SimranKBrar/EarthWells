@@ -3,11 +3,13 @@ import { Link, To } from "react-router-dom";
 import './css/Header.css';
 import { useNavigate } from 'react-router-dom';
 
+
 const Header = () => {
-  const handleLogout = () => {
-    console.log("Logout clicked");
-  };
   const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate('/');
+  };
 
   const handleButtonClick = (path: To) => {
     navigate(path);
