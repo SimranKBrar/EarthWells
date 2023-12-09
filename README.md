@@ -19,14 +19,18 @@ Clean water is an issue that continues to persist across the world there are sti
 
 Earth wells will impower the user to take clean water back into their own hands, it will provide a community forum for natural water filters. The forum will provide not only knowledge on a plethora of natural water filters but the forum format will support any questions users may have. These questions could range from part modification and adaption to scalability limitations.
 
-# Project Video Uploads #
-
-[Project Initailization Video](https://youtu.be/b9MD6Q6DeXw)
 
 
 # Commercial
 
 https://github.com/SimranKBrar/EarthWells/assets/77306119/1dc0c0dc-fd2c-4e89-9e33-1272bd1250de
+
+# Project Closing Documents
+[Project Report Out and Lessons Learned](https://github.com/SimranKBrar/EarthWells/blob/939ef089461e3a5e87080e6eef82f64d9e9b37ea/Project%20Closing%20Documents/Report-Out-And-Lessons-Learned-Earth-Wells.pdf)
+[Final Project Progress Report](https://github.com/SimranKBrar/EarthWells/blob/939ef089461e3a5e87080e6eef82f64d9e9b37ea/Project%20Closing%20Documents/Earth%20Wells%20Final%20Status%20Report.pdf)
+[Addressing Ideas and Concepts Discussed in the Lectures](https://github.com/SimranKBrar/EarthWells/blob/939ef089461e3a5e87080e6eef82f64d9e9b37ea/Project%20Closing%20Documents/Concepts%20From%20Lecture%20In%20Earth%20Wells.pdf)
+[Final Presentation](https://github.com/SimranKBrar/EarthWells/blob/939ef089461e3a5e87080e6eef82f64d9e9b37ea/Project%20Closing%20Documents/Earth%20Wells%20Final%20Presentation%20Slides.pdf)
+[Commercial](https://github.com/SimranKBrar/EarthWells/blob/939ef089461e3a5e87080e6eef82f64d9e9b37ea/Project%20Closing%20Documents/Earth%20Wells%20Commercial.mp4)
 
 # Installation
 
@@ -75,4 +79,10 @@ Before you begin, ensure you have the following installed:
 
 Make sure to replace `<Your MongoDB Atlas URL>` with the actual URL you obtained from MongoDB Atlas. Additionally, ensure that the specified ports (5000 for the backend and 5173 for the frontend) are available and not in use by other processes on your machine.
 
+# Project Initiallization Video #
 
+[Project Initailization Video](https://youtu.be/b9MD6Q6DeXw)
+
+# Other Project Documents
+[Project Initiallzation Documnets](https://github.com/SimranKBrar/EarthWells/tree/939ef089461e3a5e87080e6eef82f64d9e9b37ea/Planning%20Documents)
+[Project Status Reports](https://github.com/SimranKBrar/EarthWells/tree/939ef089461e3a5e87080e6eef82f64d9e9b37ea/Progress%20Reports)
