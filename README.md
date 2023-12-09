@@ -22,3 +22,9 @@ Earth wells will impower the user to take clean water back into their own hands,
 # Project Video Uploads #
 
 [Project Initailization Video](https://youtu.be/b9MD6Q6DeXw)
+
+
+
+
+https://github.com/SimranKBrar/EarthWells/assets/77306119/1dc0c0dc-fd2c-4e89-9e33-1272bd1250de
+
