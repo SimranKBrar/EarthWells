@@ -24,7 +24,39 @@ Earth wells will impower the user to take clean water back into their own hands,
 [Project Initailization Video](https://youtu.be/b9MD6Q6DeXw)
 
 
-
+# Commercial
 
 https://github.com/SimranKBrar/EarthWells/assets/77306119/1dc0c0dc-fd2c-4e89-9e33-1272bd1250de
+
+# Installation
+
+Before you begin, ensure you have the following installed:
+
+- Node.js and npm
+- React Native CLI
+- MongoDB Atlas account
+
+## Backend Setup (Express.js)
+
+1. **Clone the Repository with your method of choosing in a code editor**
+   ```bash
+   git clone [backend-repo-url]
+   cd [backend-folder]
+   
+2. **Install Dependencies**:
+    npm install
+   
+3. **Set Up Mongo DB Atlas Url**
+  
+4. **Start the Backend Server:**
+   Navigate to
+   Run
+   npm run dev
+  
+5. **Start the Backend Server:**
+ Navigate to
+   Run
+   npm run dev
+6. **Open Up a browser and app will be running on **
+
 
