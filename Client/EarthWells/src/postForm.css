@@ -1,32 +1,29 @@
 .postformconatiner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
- 
-  }
-
-  .postformmaetrialitem,
-  .postformtagitem{
-  
-  }
-  form.postformform {
-    margin-left: 0px;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-  .postformbox {
-    max-width: 320px;
-    width: 100%;
-    padding: 15px;
-    background-color: #fefefe;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.256);
-    border-radius: 10px;
-    text-align: center !important;
-  }
-  
-  .postformform {
-    text-align: left;
-  }
-  .postformtitlebox,
+
+form.postformform {
+  margin-left: 0px;
+  width: 100%;
+}
+
+.postformbox {
+  max-width: 320px;
+  width: 100%;
+  padding: 15px;
+  background-color: #fefefe;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.256);
+  border-radius: 10px;
+  text-align: center !important;
+}
+
+.postformform {
+  text-align: left;
+}
+
+.postformtitlebox,
 .postformbodybox,
 .postformmaterialsbox,
 .postformtagbox {
@@ -52,7 +49,6 @@
   color: black;
 }
 
-
 .postformbodytitle {
   font-size: 16px;
   font-weight: 700;
@@ -69,7 +65,7 @@
 
 .postformmaterialitem,
 .postformtagitem {
- padding: 5px;
+  padding: 5px;
   border-radius: 10px;
   padding: 5px;
   border-radius: 10px;
@@ -93,18 +89,18 @@
 }
 
 label.postformmaterialstitle {
-    font-size: 16px;
-    font-weight: 700;
-    color: black;
-    margin-bottom: 5px;
-    display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 5px;
+  display: block;
 }
 label.postformtaglabel {
-    font-size: 16px;
-    font-weight: 700;
-    color: black;
-    margin-bottom: 5px;
-    display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 5px;
+  display: block;
 }
 
 .postformmaterialcheck,
@@ -112,10 +108,10 @@ label.postformtaglabel {
   padding: 0px;
 }
 
-input[type="checkbox"]{
-    background:  black;
+input[type="checkbox"] {
+  background: black;
 }
 .postformmaterialname,
-.postformtagname{
+.postformtagname {
   font-weight: 400;
 }

@@ -1,40 +1,38 @@
 header {
-    background-color:  #114fc2; /* Blue background color */
-    padding: 10px 20px; /* Add padding for spacing */
-    border-radius: 20px; /* Add rounded edges */
+  background-color: #114fc2;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.site-logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #e1f2ff;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+.Logo {
+  width: fit-content;
+}
+.topBar {
+  display: flex;
+  align-items: center;
+}
 
-  }
-  .nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .site-logo{
-    font-size: 24px;
-    font-weight: 700; 
-    color: #e1f2ff;
-    margin: 0; /* Remove margin to ensure it aligns properly */
-    font-family: 'Roboto', sans-serif; 
-  }
-  .Logo{
-    width: fit-content;
-  }
-  .topBar {
-    display: flex;
-    align-items: center;
-  }
-  
-  .topBar button {
-    background-color: white; /* White background color for buttons */
-    color: #114fc2; /* Blue text color for buttons */
-    padding: 8px 16px; /* Add padding for button size */
-    margin: 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 10px; /* Add rounded edges */
-    
-  }
-  
-  .topBar button:hover {
-    background-color: #f2f2f2; /* Light gray background on hover */
-  }
+.topBar button {
+  background-color: white;
+  color: #114fc2;
+  padding: 8px 16px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.topBar button:hover {
+  background-color: #f2f2f2;
+}

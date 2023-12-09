@@ -8,7 +8,7 @@ interface Material {
   name: string;
   locations: string[];
   description: string;
-  alternatives: Material[]; // Update type to Material[]
+  alternatives: Material[];
 }
 
 const MaterialDetail: React.FC = () => {
@@ -46,35 +46,35 @@ const MaterialDetail: React.FC = () => {
   const isUserLocationInMaterial = material.locations.includes(token?.userLocation || '');
 
   return (
-    <div><Header /> 
-    <div className="Container">
-      <div className="material-info">
-        <h2 className="material-name">{material.name}</h2>
-        <p className="material-description">{material.description}</p>
-        <p className="material-description">
-          <span className={isUserLocationInMaterial ? 'green-text' : 'red-text'}>
-            {token?.userLocation}
-          </span>
-        </p>
-        <ul className="location-list">
-          {material.locations.map((location) => (
-            <li key={location} className="location-item">{location}</li>
-          ))}
-        </ul>
-        <div className="alternatives">
-          <h3>Alternatives:</h3>
-          <ul>
-            {material.alternatives.map((alternative) => (
-              <li key={alternative._id}>
-           <Link to={`/materials/${alternative._id}?token=${encodeURIComponent(JSON.stringify(token))}`}>
-  {alternative.name}
-</Link>
-              </li>
+    <div><Header />
+      <div className="Container">
+        <div className="material-info">
+          <h2 className="material-name">{material.name}</h2>
+          <p className="material-description">{material.description}</p>
+          <p className="material-description">
+            <span className={isUserLocationInMaterial ? 'green-text' : 'red-text'}>
+              {token?.userLocation}
+            </span>
+          </p>
+          <ul className="location-list">
+            {material.locations.map((location) => (
+              <li key={location} className="location-item">{location}</li>
             ))}
           </ul>
+          <div className="alternatives">
+            <h3>Alternatives:</h3>
+            <ul>
+              {material.alternatives.map((alternative) => (
+                <li key={alternative._id}>
+                  <Link to={`/materials/${alternative._id}?token=${encodeURIComponent(JSON.stringify(token))}`}>
+                    {alternative.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };

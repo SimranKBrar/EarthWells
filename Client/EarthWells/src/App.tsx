@@ -7,7 +7,6 @@ import RegistrationForm from './SignUp.tsx';
 import Materials from './materialList.tsx';
 import MaterialDetail from './materialDetail.tsx';
 import Header from './Header.tsx';
-import PostsByDropdowns from './PostsByDropdowns.tsx';
 import PostFilterPage from './PostsByDropdowns.tsx';
 import AddMaterialForm from './materialform.tsx';
 import TagForm from './tagform.tsx';
@@ -19,17 +18,15 @@ interface TokenType {
   firstName: string;
   lastName: string;
   userLocation: string;
-  // Add other properties if needed
 }
 
 const App = () => {
   const [token, setToken] = useState<TokenType | null>(null);
 
   useEffect(() => {
-    // Check if a token is stored in localStorage on mount
     const storedToken = localStorage.getItem('token');
     console.log('Stored Token:', storedToken);
-    
+
     try {
       if (storedToken) {
         const parsedToken = JSON.parse(storedToken);
@@ -43,7 +40,6 @@ const App = () => {
 
   const handleLogin = (newToken: TokenType | null) => {
     console.log(newToken);
-    // Save the new token to state and localStorage
     setToken(newToken);
     if (newToken) {
       localStorage.setItem('token', JSON.stringify(newToken));
@@ -53,7 +49,6 @@ const App = () => {
   };
 
   const handleLogout = () => {
-    // Remove the token from state and localStorage
     setToken(null);
     localStorage.removeItem('token');
   };
@@ -64,51 +59,51 @@ const App = () => {
         <Route
           path="/"
           element={<LoginForm handleLogin={handleLogin} />}
-          
+
         />
         <Route
           path="/home"
           element={<Home token={token} handleLogout={handleLogout} />}
         />
-                <Route
+        <Route
           path="/posts/:postId"
           element={<PostDetails token={token} />}
         />
-                        <Route
+        <Route
           path="/signup"
-          element={<RegistrationForm  />}
+          element={<RegistrationForm />}
         />
-                        <Route
+        <Route
           path="/mat"
-          element={<Materials  token={token} />}
+          element={<Materials token={token} />}
         />
-                              <Route
+        <Route
           path="/materialsList"
-          element={<MaterialsList  token={token} />}
+          element={<MaterialsList token={token} />}
         />
         PostsByDropdowns
-         <Route
+        <Route
           path="/materials/:materialId"
-          element={<MaterialDetail  token={token}/>}
+          element={<MaterialDetail token={token} />}
         />
         <Route
           path="/PostsByDropdowns"
           element={<PostFilterPage />}
         />
-        
+
         <Route
           path="/Addmateril"
           element={<AddMaterialForm />}
         />
-                <Route
+        <Route
           path="/AddTag"
-          element={<TagForm/>}
+          element={<TagForm />}
         />
-                    <Route
+        <Route
           path="/Sort"
-          element={<PostFilterPage token = {token}/>}
+          element={<PostFilterPage token={token} />}
         />
-    </Routes>
+      </Routes>
     </Router>
   );
 };

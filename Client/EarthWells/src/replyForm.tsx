@@ -1,18 +1,17 @@
-// ReplyForm.js
 import React, { useState } from 'react';
 import './replyForm.css';
+
 interface TokenType {
   id: string;
   username: string;
   firstName: string;
   lastName: string;
   userLocation: string;
-  // Add other properties if needed
 }
 
 interface ReplyFormProps {
   onSubmit: (content: string, username: string) => void;
-  token: TokenType; 
+  token: TokenType;
 }
 
 const ReplyForm: React.FC<ReplyFormProps> = ({ onSubmit, token }) => {
@@ -33,7 +32,7 @@ const ReplyForm: React.FC<ReplyFormProps> = ({ onSubmit, token }) => {
         onChange={(e) => setContent(e.target.value)}
         required
       />
-       <input type='hidden' value='sim' name='username' />
+      <input type='hidden' value='sim' name='username' />
       <button type="submit">Submit Reply</button>
     </form>
   );

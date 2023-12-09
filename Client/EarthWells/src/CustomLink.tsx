@@ -1,4 +1,3 @@
-// CustomLink.tsx
 import React from "react";
 import { Link, LinkProps } from "react-router-dom";
 
@@ -8,11 +7,10 @@ interface TokenType {
   firstName: string;
   lastName: string;
   userLocation: string;
-  // Add other properties if needed
 }
 
 interface CustomLinkProps extends LinkProps {
-  token: TokenType | null; // Replace TokenType with the actual type of your token
+  token: TokenType | null;
 }
 
 const CustomLink: React.FC<CustomLinkProps> = ({ token, ...props }) => {

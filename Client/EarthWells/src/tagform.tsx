@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import Header from "./Header";
 import "./tagForm.css"
 
-
-
 const TagForm: React.FC = () => {
   const [name, setName] = useState<string>('');
   const [description, setDescription] = useState<string>('');
@@ -25,37 +23,34 @@ const TagForm: React.FC = () => {
       }
 
       const createdTag = await response.json();
-    
+
     } catch (error) {
       console.error('Error creating a new tag:', error);
-      // Handle error (e.g., display an error message)
     }
   };
 
   return (
-    <div > <Header/> 
-    <div className='tagformcont'>
-   
-    <form className='tagform' onSubmit={handleSubmit}>
-    <h1>Add a Tag</h1>
-    <div className='tagnamecont'>
-     
-      <label>
-        Name:
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-      </label>
+    <div > <Header />
+      <div className='tagformcont'>
+        <form className='tagform' onSubmit={handleSubmit}>
+          <h1>Add a Tag</h1>
+          <div className='tagnamecont'>
+            <label>
+              Name:
+              <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+            </label>
+          </div>
+          <br />
+          <div className='tagdeccont'>
+            <label>
+              Description:
+              <textarea value={description} onChange={(e) => setDescription(e.target.value)} />
+            </label>
+          </div>
+          <br />
+          <button className='tagbuttoncont' type="submit">Create Tag</button>
+        </form>
       </div>
-      <br />
-      <div className='tagdeccont'>
-      <label>
-        Description:
-        <textarea value={description} onChange={(e) => setDescription(e.target.value)} />
-      </label>
-      </div>
-      <br />
-      <button className='tagbuttoncont' type="submit">Create Tag</button>
-    </form>
-    </div>
     </div>
   );
 };

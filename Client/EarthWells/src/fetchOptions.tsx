@@ -1,7 +1,4 @@
-// Replace this with the actual endpoint URL for fetching materials
 const MATERIALS_API_URL = 'http://localhost:5000/materials';
-
-// Replace this with the actual endpoint URL for fetching tags
 const TAGS_API_URL = 'http://localhost:5000/tags';
 
 export const fetchMaterials = async () => {

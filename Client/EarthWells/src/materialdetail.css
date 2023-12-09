@@ -5,13 +5,13 @@
   background-color: #30a2f423;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.256);
   border-radius: 20px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   text-align: left;
 }
 
 .material-info {
   margin-top: 20px;
-  width: 100%; /* Set width to 100% to stretch the length */
+  width: 100%;
 }
 
 .material-name {
@@ -34,7 +34,7 @@
   border-radius: 5px;
   margin: 5px 0;
   cursor: pointer;
-  display: inline-block; /* Ensures the button doesn't take the full width */
+  display: inline-block;
 }
 
 .green-text {

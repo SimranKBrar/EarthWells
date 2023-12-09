@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Header from "./Header";
 import './maertiallist.css';
 
 interface Material {
@@ -15,7 +14,6 @@ interface TokenType {
   firstName: string;
   lastName: string;
   userLocation: string;
-  // Add other properties if needed
 }
 
 interface MaterialsProps {
@@ -28,13 +26,13 @@ const Materials: React.FC<MaterialsProps> = ({ token }) => {
   useEffect(() => {
     fetch("http://localhost:5000/materials", {
       headers: {
-        Authorization: `Bearer ${token}`, // Pass the token in the request headers if needed
+        Authorization: `Bearer ${token}`,
       },
     })
       .then((response) => response.json())
       .then((data) => setMaterials(data))
       .catch((error) => console.error("Error fetching materials:", error));
-  }, [token]); // Add token to the dependency array to re-fetch data when the token changes
+  }, [token]);
 
   return (
     <div className="MaterialListconatiner">
@@ -42,10 +40,10 @@ const Materials: React.FC<MaterialsProps> = ({ token }) => {
         <h2 className="MaterialListheader" >Materials</h2>
         <div className="MaterialListconatinerinner">
           {materials.map((material) => (
-            <div  key={material._id} className="material-item">
-    <Link to={`/materials/${material._id}?token=${encodeURIComponent(JSON.stringify(token))}`}>
-      <strong className="MaterialListitemname" >{material.name}</strong>
-    </Link>
+            <div key={material._id} className="material-item">
+              <Link to={`/materials/${material._id}?token=${encodeURIComponent(JSON.stringify(token))}`}>
+                <strong className="MaterialListitemname" >{material.name}</strong>
+              </Link>
             </div>
           ))}
         </div>

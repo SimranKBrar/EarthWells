@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginForm.css';
 import { jwtDecode } from 'jwt-decode';
-import earthImage from '/src/drop.png'; 
+import earthImage from '/src/drop.png';
 
 interface TokenType {
   id: string;
@@ -10,7 +10,6 @@ interface TokenType {
   firstName: string;
   lastName: string;
   userLocation: string;
-  // Add other properties if needed
 }
 type SetTokenFunction = (token: TokenType | null) => void;
 
@@ -36,8 +35,7 @@ function LoginForm({ handleLogin }: { handleLogin: SetTokenFunction }) {
 
       if (response.ok) {
         const decodedToken = jwtDecode(receivedToken) as TokenType;
-      console.log(decodedToken);
-        // Call the handleLogin function with the decoded token
+        console.log(decodedToken);
         handleLogin(decodedToken);
         navigate('/home');
       } else {
@@ -49,7 +47,6 @@ function LoginForm({ handleLogin }: { handleLogin: SetTokenFunction }) {
   };
 
   const handleSignupClick = () => {
-    // Navigate to the signup page
     navigate('/signup');
   };
 

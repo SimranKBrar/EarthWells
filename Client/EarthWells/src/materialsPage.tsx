@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Header from "./Header";
 import './materialpage.css';
 
-
 interface Material {
   _id: string;
   name: string;
@@ -16,7 +15,6 @@ interface TokenType {
   firstName: string;
   lastName: string;
   userLocation: string;
-  // Add other properties if needed
 }
 
 interface MaterialsProps {
@@ -29,31 +27,30 @@ const MaterialsList: React.FC<MaterialsProps> = ({ token }) => {
   useEffect(() => {
     fetch("http://localhost:5000/materials", {
       headers: {
-        Authorization: `Bearer ${token}`, // Pass the token in the request headers if needed
+        Authorization: `Bearer ${token}`,
       },
     })
       .then((response) => response.json())
       .then((data) => setMaterials(data))
       .catch((error) => console.error("Error fetching materials:", error));
-  }, [token]); // Add token to the dependency array to re-fetch data when the token changes
+  }, [token]);
 
   return (
-    <div>  <Header /> 
-    <div className="MaterialListconatinerpage">
-       
-      <div className="MaterialListconatiner2page">
-        <h2 className="MaterialListheaderpage" >Materials</h2>
-        <div className="MaterialListconatinerinnerpage">
-          {materials.map((material) => (
-            <div  key={material._id} className="material-itempage">
-    <Link to={`/materials/${material._id}?token=${encodeURIComponent(JSON.stringify(token))}`}>
-      <strong className="MaterialListitemnamepage" >{material.name}</strong>
-    </Link>
-            </div>
-          ))}
+    <div>  <Header />
+      <div className="MaterialListconatinerpage">
+        <div className="MaterialListconatiner2page">
+          <h2 className="MaterialListheaderpage" >Materials</h2>
+          <div className="MaterialListconatinerinnerpage">
+            {materials.map((material) => (
+              <div key={material._id} className="material-itempage">
+                <Link to={`/materials/${material._id}?token=${encodeURIComponent(JSON.stringify(token))}`}>
+                  <strong className="MaterialListitemnamepage" >{material.name}</strong>
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };
