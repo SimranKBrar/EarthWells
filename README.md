@@ -44,7 +44,7 @@ Before you begin, ensure you have the following installed:
       ```bash
     npm install
    
-4. **Set Up Mongo DB Atlas Url**
+3. **Set Up Mongo DB Atlas Url**
 <br>
 Set up an account with Mongo DB Atlas and replace the space between ' ' in the code below with your code at the bottom of the index.js file in the EarthWellsServer Folder
  ```bash
@@ -53,21 +53,22 @@ mongoose.connect(''
     console.log('listening on port 5000');
     app.listen(5000); 
   
-6. **Start the Backend Server:**
+4. **Start the Backend Server:**
 <br>
-   Navigate to
+   Navigate to \Client\EarthWellsServer
 <br>
    Run
    ```bash
    npm run dev
   
-7. **Start the Backend Server:**
+5. **Start the FrontEnd Server:**
 <br>
- Navigate to
+ Navigate to \Client\EarthWells
 <br>
    Run
    ```bash
    npm run dev
-9. **Open Up a browser and app will be running on **
+
+6. **Open Up a browser and app will be running on http://127.0.0.1:5173/ **
 
 
