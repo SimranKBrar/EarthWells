@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Signup.css';
+import './css/Signup.css';
 import earthImage from '/src/drop.png';
 
 function RegistrationForm() {

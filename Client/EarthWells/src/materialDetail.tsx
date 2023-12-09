@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useLocation, Link } from "react-router-dom";
-import './materialdetail.css';
+import './css/MaterialDetail.css';
 import Header from "./Header";
 
 interface Material {

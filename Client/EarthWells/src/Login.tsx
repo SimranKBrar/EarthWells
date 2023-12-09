@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './LoginForm.css';
+import './css/LoginForm.css';
 import { jwtDecode } from 'jwt-decode';
 import earthImage from '/src/drop.png';
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './replyForm.css';
+import './css/ReplyForm.css';
 
 interface TokenType {
   id: string;

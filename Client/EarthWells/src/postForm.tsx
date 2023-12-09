@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { fetchTags, fetchMaterials } from './fetchOptions';
-import "./postForm.css"
+import "./css/PostForm.css"
 
 interface TokenType {
   id: string;

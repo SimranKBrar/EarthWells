@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import ReplyForm from './replyForm';
 import Header from './Header';
-import './PostDetail.css';
+import './css/PostDetail.css';
 
 interface Material {
   _id: string;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import "./css/App.css";
 import { Link } from "react-router-dom";
 import { TPost } from "./api/getPosts";
 import PostForm from "./postForm";

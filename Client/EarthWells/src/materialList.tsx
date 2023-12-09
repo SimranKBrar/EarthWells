@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import './maertiallist.css';
+import './css/MaterialList.css';
 
 interface Material {
   _id: string;

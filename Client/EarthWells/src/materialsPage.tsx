@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "./Header";
-import './materialpage.css';
+import './css/MaterialPage.css';
 
 interface Material {
   _id: string;

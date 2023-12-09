@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from "./Header";
-import "./tagForm.css"
+import "./css/TagForm.css"
 
 const TagForm: React.FC = () => {
   const [name, setName] = useState<string>('');

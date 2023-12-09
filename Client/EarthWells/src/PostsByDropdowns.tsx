@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import "./sort.css"
+import "./css/Sort.css"
 import Header from './Header';
 import { Link } from 'react-router-dom';
 
