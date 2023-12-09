@@ -36,27 +36,35 @@ Before you begin, ensure you have the following installed:
 - React Native CLI
 - MongoDB Atlas account
 
-## Backend Setup (Express.js)
+# SetUp
 
 1. **Clone the Repository with your method of choosing in a code editor**
-   ```bash
-   git clone [backend-repo-url]
-   cd [backend-folder]
    
 2. **Install Dependencies**:
       ```bash
     npm install
    
 4. **Set Up Mongo DB Atlas Url**
+<br>
+Set up an account with Mongo DB Atlas and replace the space between ' ' in the code below with your code at the bottom of the index.js file in the EarthWellsServer Folder
+ ```bash
+mongoose.connect(''
+  ).then(() => {
+    console.log('listening on port 5000');
+    app.listen(5000); 
   
-5. **Start the Backend Server:**
+6. **Start the Backend Server:**
+<br>
    Navigate to
+<br>
    Run
    ```bash
    npm run dev
   
 7. **Start the Backend Server:**
+<br>
  Navigate to
+<br>
    Run
    ```bash
    npm run dev
