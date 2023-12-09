@@ -2,15 +2,14 @@ import mongoose from 'mongoose';
 
 
 const Schema = mongoose.Schema;
-//const ObjectId = Schema.ObjectId;
 
 const PostSchema = new Schema({
   title: String,
   author: {
     type: Schema.Types.ObjectId,
-    ref: 'User', // Reference to the User model
+    ref: 'User',
   },
-  body: String, // Add a field for the post body text
+  body: String,
   replies: [
     {
       type: Schema.Types.ObjectId,
@@ -32,13 +31,13 @@ const PostSchema = new Schema({
   materials: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Materials', // Reference to the Materials model
+      ref: 'Materials', 
     },
   ],
   tags: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Tags', // Reference to the Materials model
+      ref: 'Tags', 
     },
   ],
 });   

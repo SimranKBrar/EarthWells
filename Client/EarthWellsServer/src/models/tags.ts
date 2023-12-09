@@ -7,7 +7,6 @@ const TagSchema = new Schema({
  description: String,
 });
 
-// Create the 'Tags' model
 const TagModel = mongoose.model('Tags', TagSchema);
 
 export default TagModel;
